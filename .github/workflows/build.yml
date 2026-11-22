@@ -13,6 +13,8 @@ jobs:
           java-version: 17
       - name: Ekstrak project
         run: unzip -q -o ClockMorph.zip
+      - name: Perbaiki konstanta hidden API
+        run: sed -i 's/WindowManager.LayoutParams.TYPE_NAVIGATION_BAR_PANEL/2024/' ClockMorph/app/src/main/kotlin/com/xos/clockmorph/MorphOverlay.kt  
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: 8.7
